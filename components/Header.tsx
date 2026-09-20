@@ -269,7 +269,7 @@ export default function Header() {
         {/* Main Navigation */}
         <div className="w-full max-w-[1440px] mx-auto px-margin h-20 flex items-center justify-between">
           <div className="flex items-center gap-space-xl">
-            <a className="flex items-center gap-space-xs group" href="#overview">
+            <a className="flex items-center gap-space-xs group" href="/">
               <div className="w-10 h-10 rounded bg-primary-container flex items-center justify-center text-on-primary shadow-sm group-hover:scale-105 transition-transform">
                 <Icon name="terminal" />
               </div>
