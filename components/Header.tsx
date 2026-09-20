@@ -2,6 +2,7 @@
 
 import type { JSX } from "react";
 import { useState, useEffect, useRef } from "react";
+import Link from "next/link";
 
 const megaMenuItems = {
   services: [
@@ -269,7 +270,7 @@ export default function Header() {
         {/* Main Navigation */}
         <div className="w-full max-w-[1440px] mx-auto px-margin h-20 flex items-center justify-between">
           <div className="flex items-center gap-space-xl">
-            <a className="flex items-center gap-space-xs group" href="/">
+            <Link className="flex items-center gap-space-xs group" href="/">
               <div className="w-10 h-10 rounded bg-primary-container flex items-center justify-center text-on-primary shadow-sm group-hover:scale-105 transition-transform">
                 <Icon name="terminal" />
               </div>
@@ -281,7 +282,7 @@ export default function Header() {
                   Engineering Studio
                 </span>
               </div>
-            </a>
+            </Link>
 
             <nav
               aria-label="Global Navigation"
@@ -922,7 +923,7 @@ export default function Header() {
                 <div className="flex flex-col gap-2 pt-2 pl-2">
                   <a
                     className="text-body-md font-body-md text-on-surface-variant hover:text-primary flex justify-between py-1"
-                    href="#custom-cloud"
+                  href="/custom-software"
                   >
                     <span>Cloud Microservices</span>
                     <span className="text-primary font-label-sm">

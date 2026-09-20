@@ -15,6 +15,7 @@ const services = [
     desc: "Fault-tolerant microservices, async APIs, and custom enterprise dashboards engineered for high throughput and zero technical regressions.",
     tags: ["React", "Go", "Python", "Node.js"],
     accent: "text-emerald-500",
+    link: "/custom-software",
   },
   {
     num: "02",
