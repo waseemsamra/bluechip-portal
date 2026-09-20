@@ -2,6 +2,7 @@
 
 import type { JSX } from "react";
 import { useState, useRef, useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 const services = [
   {
@@ -47,6 +48,7 @@ const services = [
     desc: "Real-time CDC data pipelines, automated transformation contracts, and executive Looker/Tableau dashboards with sub-second query performance.",
     tags: ["Snowflake", "BigQuery", "dbt Core", "Airflow"],
     accent: "text-purple-500",
+    link: "/bi-data-warehouse",
   },
   {
     num: "05",
@@ -117,6 +119,7 @@ const services = [
 ];
 
 export default function ServicesCarousel(): JSX.Element {
+  const router = useRouter();
   const [activeIndex, setActiveIndex] = useState(0);
   const trackRef = useRef<HTMLDivElement>(null);
 
@@ -226,7 +229,15 @@ export default function ServicesCarousel(): JSX.Element {
             {services.map((service) => (
               <div
                 key={service.title}
-                className="carousel-item flex-none w-[320px] sm:w-[380px] bg-surface-container-low rounded-2xl p-6 border border-outline-variant/60 flex flex-col justify-between hover:shadow-xl hover:border-primary/50 transition-all duration-300 group"
+                className="carousel-item flex-none w-[320px] sm:w-[380px] bg-surface-container-low rounded-2xl p-6 border border-outline-variant/60 flex flex-col justify-between hover:shadow-xl hover:border-primary/50 hover:bg-surface-container cursor-pointer transition-all duration-300 group"
+                onClick={() => {
+                  const target = service.link || "#consultation";
+                  if (target.startsWith("/")) {
+                    router.push(target);
+                  } else {
+                    window.location.hash = target;
+                  }
+                }}
               >
                 <div className="flex flex-col gap-4">
                   <div className="flex items-center justify-between">
@@ -276,15 +287,12 @@ export default function ServicesCarousel(): JSX.Element {
                   <span className="text-xs font-bold text-emerald-700">
                     Enterprise SLA Ready
                   </span>
-                  <a
-                    className="text-xs font-bold text-primary group-hover:underline flex items-center gap-1"
-                    href="#consultation"
-                  >
+                  <span className="text-xs font-bold text-primary group-hover:underline flex items-center gap-1">
                     <span>Inquire Spec</span>
                     <span className="material-symbols-outlined text-[14px]">
                       arrow_forward
                     </span>
-                  </a>
+                  </span>
                 </div>
               </div>
             ))}
