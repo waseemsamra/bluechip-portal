@@ -27,6 +27,7 @@ const services = [
     desc: "High-performance native and cross-platform apps with rock-solid offline synchronization, biometric authentication, and Apple/Google store compliance.",
     tags: ["React Native", "Flutter", "Swift", "Kotlin"],
     accent: "text-blue-500",
+    link: "/mobile-development",
   },
   {
     num: "03",
@@ -61,6 +62,7 @@ const services = [
     desc: "Bespoke ERP architecture fully compliant with UAE Federal Tax Authority (FTA Phase 2 E-Invoicing) and Peppol format specifications.",
     tags: ["FTA Phase 2", "Peppol", "XML UBL", "Custom ERP"],
     accent: "text-teal-500",
+    link: "/uae-vat-compliance",
   },
   {
     num: "06",
@@ -99,6 +101,7 @@ const services = [
     num: "09",
     label: "ENTERPRISE CMS",
     icon: "grid_view",
+    link: "/enterprise-cms",
     title: "Enterprise Portals & CMS",
     price: "$25k – $85k Sprint",
     weeks: "4-8 Wks",

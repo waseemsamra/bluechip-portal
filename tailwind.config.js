@@ -51,6 +51,7 @@ module.exports = {
         "on-surface-variant": "#3d4a42",
         outline: "#6d7a72",
         "outline-variant": "#bccac0",
+        "on-outline-variant": "#bccac0",
         background: "#f8f9ff",
         "on-background": "#0b1c30",
         error: "#ba1a1a",

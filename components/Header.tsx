@@ -59,25 +59,49 @@ const megaMenuItems = {
     {
       category: "Client & Frontend",
       icon: "layers",
-      items: ["Next.js 14 (App Router)", "React Native / Expo", "Swift 6 / SwiftUI", "Kotlin Multiplatform", "Tailwind CSS 3.4+"],
+      items: [
+        "Next.js 14 (App Router)",
+        "React Native / Expo",
+        "Swift 6 / SwiftUI",
+        "Kotlin Multiplatform",
+        "Tailwind CSS 3.4+",
+      ],
       color: "bg-primary",
     },
     {
       category: "Backend & Distributed",
       icon: "dns",
-      items: ["Go (Golang 1.22)", "Rust (Tokio / Axum)", "Node.js / TypeScript", "Python 3.12 (FastAPI)", "gRPC & Protobuf"],
+      items: [
+        "Go (Golang 1.22)",
+        "Rust (Tokio / Axum)",
+        "Node.js / TypeScript",
+        "Python 3.12 (FastAPI)",
+        "gRPC & Protobuf",
+      ],
       color: "bg-primary",
     },
     {
       category: "Cloud & Orchestration",
       icon: "cloud_circle",
-      items: ["Kubernetes (EKS / GKE)", "Terraform / OpenTofu", "ArgoCD GitOps", "AWS Lambda / EventBridge", "Cloudflare Workers"],
+      items: [
+        "Kubernetes (EKS / GKE)",
+        "Terraform / OpenTofu",
+        "ArgoCD GitOps",
+        "AWS Lambda / EventBridge",
+        "Cloudflare Workers",
+      ],
       color: "bg-primary",
     },
     {
       category: "Data & Persistence",
       icon: "database",
-      items: ["PostgreSQL 16 (pgvector)", "Redis 7 (Cluster)", "ClickHouse OLAP", "Apache Kafka", "ScyllaDB / Cassandra"],
+      items: [
+        "PostgreSQL 16 (pgvector)",
+        "Redis 7 (Cluster)",
+        "ClickHouse OLAP",
+        "Apache Kafka",
+        "ScyllaDB / Cassandra",
+      ],
       color: "bg-tertiary",
     },
   ],
@@ -94,7 +118,9 @@ function Icon({ name }: { name: string }) {
     call: (
       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .87 2.92 1.5 1.5 0 0 1-.34 1.85L9.17 9.17a12.2 12.2 0 0 0 2.53 2.53 1.5 1.5 0 0 1 1.85-.34 12.84 12.84 0 0 0 2.92-.87A2 2 0 0 1 22 6.91z" />
     ),
-    calendar_month: <path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 16H5V9h14v11z" />,
+    calendar_month: (
+      <path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 16H5V9h14v11z" />
+    ),
     person: (
       <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 9.6 12 9.6zm0 2.4c-3.2 0-5.8 2.6-5.8 5.8v.6h11.6v-.6c0-3.2-2.6-5.8-5.8-5.8z" />
     ),
@@ -105,12 +131,18 @@ function Icon({ name }: { name: string }) {
       <path d="M22 11.08V12a10 10 0 0 1-5.93-9.14M22 4L12 14.01l-3-3" />
     ),
     code: <path d="M9.4 16.6L4.8 12l4.6-4.6 1.4 1.4L7.6 12l3.2 3.2z" />,
-    layers: <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />,
-    dns: <path d="M12 2C7.58 2 4 5.58 4 10c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z" />,
+    layers: (
+      <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+    ),
+    dns: (
+      <path d="M12 2C7.58 2 4 5.58 4 10c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z" />
+    ),
     cloud: (
       <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.61 5.64 5.36 8.04 2.35 8.36 0 10.9 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.79-4.65-4.96z" />
     ),
-    cloud_circle: <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" />,
+    cloud_circle: (
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" />
+    ),
     database: <path d="M12 3v18m-9-9h18" />,
     security: <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />,
     account_balance: <path d="M12 2L2 7v10c0 6 8 12 8 12s8-6 8-12V7l-10-5z" />,
@@ -137,7 +169,9 @@ function Icon({ name }: { name: string }) {
     public: (
       <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93C7.05 18.67 4 15.62 4 11.5 4 7.36 7.36 4 11.5 4c2.33 0 4.47 1 5.88 2.69L9 15.5v.5c0 .55.45 1 1 1v3.43z" />
     ),
-    people: <path d="M16 9c0 2.21-1.79 4-4 4s-4-1.79-4-4 1.79-4 4-4 4 1.79 4 4z" />,
+    people: (
+      <path d="M16 9c0 2.21-1.79 4-4 4s-4-1.79-4-4 1.79-4 4-4 4 1.79 4 4z" />
+    ),
   };
 
   const path = icons[name] || icons.info;
@@ -202,7 +236,9 @@ function MegaNavButton({
 export default function Header() {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
-  const [expandedAccordion, setExpandedAccordion] = useState<string | null>(null);
+  const [expandedAccordion, setExpandedAccordion] = useState<string | null>(
+    null,
+  );
   const closeTimerRef = useRef<number | null>(null);
 
   const scheduleClose = () => {
@@ -236,9 +272,9 @@ export default function Header() {
     <>
       <header className="fixed top-0 left-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
         {/* Utility Bar */}
-          <div className="w-full bg-surface-container-low">
-            <div className="w-full max-w-[1440px] mx-auto px-margin flex items-center justify-between h-10">
-              <div className="flex items-center gap-space-md">
+        <div className="w-full bg-surface-container-low">
+          <div className="w-full max-w-[1440px] mx-auto px-margin flex items-center justify-between h-10">
+            <div className="flex items-center gap-space-md">
               <span className="flex items-center gap-space-xs font-label-sm text-label-sm text-primary uppercase">
                 <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
                 Available For Q3 Sprints
@@ -320,18 +356,6 @@ export default function Header() {
                 cancelClose={cancelClose}
                 scheduleClose={scheduleClose}
               />
-              <a
-                className="px-space-md py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors"
-                href="#bench"
-              >
-                Staff Bench
-              </a>
-              <a
-                className="px-space-md py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors"
-                href="#notes"
-              >
-                Field Notes
-              </a>
             </nav>
           </div>
 
@@ -391,7 +415,7 @@ export default function Header() {
               </a>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-lg">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-lg">
               {/* Col 1: Core & Mobile */}
               <div className="flex flex-col gap-space-sm">
                 <div className="flex items-center gap-2 text-primary font-label-lg text-label-lg uppercase tracking-wider">
@@ -402,14 +426,11 @@ export default function Header() {
                 </div>
                 <a
                   className="p-space-sm rounded hover:bg-surface-container transition-colors group flex flex-col gap-1"
-                  href="#custom-cloud"
+                  href="/custom-software"
                 >
                   <div className="flex items-center justify-between">
                     <span className="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors">
                       Custom Cloud &amp; Microservices
-                    </span>
-                    <span className="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-primary/10 text-primary">
-                      $20k–$80k
                     </span>
                   </div>
                   <p className="font-body-sm text-body-sm text-on-surface-variant">
@@ -419,19 +440,16 @@ export default function Header() {
                 </a>
                 <a
                   className="p-space-sm rounded hover:bg-surface-container transition-colors group flex flex-col gap-1"
-                  href="#mobile-native"
+                  href="/mobile-development"
                 >
                   <div className="flex items-center justify-between">
                     <span className="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors">
                       iOS &amp; Android Apps
                     </span>
-                    <span className="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-primary/10 text-primary">
-                      $20k–$75k
-                    </span>
                   </div>
                   <p className="font-body-sm text-body-sm text-on-surface-variant">
-                    Swift UI, Kotlin Multiplatform, React Native with
-                    biometrics &amp; offline caches.
+                    Swift UI, Kotlin Multiplatform, React Native with biometrics
+                    &amp; offline caches.
                   </p>
                 </a>
                 <a
@@ -447,8 +465,8 @@ export default function Header() {
                     </span>
                   </div>
                   <p className="font-body-sm text-body-sm text-on-surface-variant">
-                    Next.js, Remix, Astro with ultra-low latency edge
-                    rendering &amp; dynamic routing.
+                    Next.js, Remix, Astro with ultra-low latency edge rendering
+                    &amp; dynamic routing.
                   </p>
                 </a>
               </div>
@@ -469,9 +487,6 @@ export default function Header() {
                     <span className="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors">
                       Managed Kubernetes Clusters
                     </span>
-                    <span className="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-primary/10 text-primary">
-                      $3k–$25k
-                    </span>
                   </div>
                   <p className="font-body-sm text-body-sm text-on-surface-variant">
                     EKS/GKE with autoscaling, blue-green deployments, and
@@ -486,13 +501,10 @@ export default function Header() {
                     <span className="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors">
                       Serverless Event Architecture
                     </span>
-                    <span className="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-primary/10 text-primary">
-                      $5k–$30k
-                    </span>
                   </div>
                   <p className="font-body-sm text-body-sm text-on-surface-variant">
-                    Lambda, EventBridge, Cloudflare Workers with
-                    dead-letter queue patterns.
+                    Lambda, EventBridge, Cloudflare Workers with dead-letter
+                    queue patterns.
                   </p>
                 </a>
                 <a
@@ -503,13 +515,10 @@ export default function Header() {
                     <span className="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors">
                       SD-WAN &amp; Edge Networking
                     </span>
-                    <span className="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-primary/10 text-primary">
-                      $8k–$35k
-                    </span>
                   </div>
                   <p className="font-body-sm text-body-sm text-on-surface-variant">
-                    Global CDN with multi-region failover and
-                    latency-based routing.
+                    Global CDN with multi-region failover and latency-based
+                    routing.
                   </p>
                 </a>
               </div>
@@ -530,13 +539,10 @@ export default function Header() {
                     <span className="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors">
                       Data Engineering &amp; Warehousing
                     </span>
-                    <span className="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-primary/10 text-primary">
-                      $18k–$85k
-                    </span>
                   </div>
                   <p className="font-body-sm text-body-sm text-on-surface-variant">
-                    Snowflake, BigQuery, Apache Airflow with event-driven
-                    ELT pipelines.
+                    Snowflake, BigQuery, Apache Airflow with event-driven ELT
+                    pipelines.
                   </p>
                 </a>
                 <a
@@ -547,13 +553,10 @@ export default function Header() {
                     <span className="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors">
                       Analytics &amp; Dashboard Suite
                     </span>
-                    <span className="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-primary/10 text-primary">
-                      $12k–$55k
-                    </span>
                   </div>
                   <p className="font-body-sm text-body-sm text-on-surface-variant">
-                    Looker, Metabase, real-time KPI dashboards with
-                    embedded analytics.
+                    Looker, Metabase, real-time KPI dashboards with embedded
+                    analytics.
                   </p>
                 </a>
                 <a
@@ -564,9 +567,6 @@ export default function Header() {
                     <span className="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors">
                       Compliance Automation
                     </span>
-                    <span className="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-primary/10 text-primary">
-                      $15k–$60k
-                    </span>
                   </div>
                   <p className="font-body-sm text-body-sm text-on-surface-variant">
                     SOC 2, ISO 27001, HIPAA audit tooling with automated
@@ -575,7 +575,31 @@ export default function Header() {
                 </a>
               </div>
 
-              {/* Col 4: Commerce & Growth */}
+              {/* Col 4: Enterprise CMS */}
+              <div className="flex flex-col gap-space-sm">
+                <div className="flex items-center gap-2 text-primary font-label-lg text-label-lg uppercase tracking-wider">
+                  <span className="material-symbols-outlined text-[20px]">
+                    inventory_2
+                  </span>
+                  <span>Enterprise CMS</span>
+                </div>
+                <a
+                  className="p-space-sm rounded hover:bg-surface-container transition-colors group flex flex-col gap-1"
+                  href="/enterprise-cms"
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors">
+                      Enterprise CMS &amp; Portals
+                    </span>
+                  </div>
+                  <p className="font-body-sm text-body-sm text-on-surface-variant">
+                    SharePoint, Liferay DXP &amp; Magnolia CMS with SSO and
+                    headless APIs.
+                  </p>
+                </a>
+              </div>
+
+              {/* Col 5: Commerce & Growth */}
               <div className="flex flex-col gap-space-sm">
                 <div className="flex items-center gap-2 text-primary font-label-lg text-label-lg uppercase tracking-wider">
                   <span className="material-symbols-outlined text-[20px]">
@@ -591,9 +615,6 @@ export default function Header() {
                     <span className="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors">
                       Shopify Plus Headless Store
                     </span>
-                    <span className="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-primary/10 text-primary">
-                      $15k–$60k
-                    </span>
                   </div>
                   <p className="font-body-sm text-body-sm text-on-surface-variant">
                     Custom Hydrogen storefronts with Oxygen CI/CD deployment
@@ -608,9 +629,6 @@ export default function Header() {
                     <span className="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors">
                       Paid Social CAPI Integration
                     </span>
-                    <span className="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-primary/10 text-primary">
-                      $5k–$25k
-                    </span>
                   </div>
                   <p className="font-body-sm text-body-sm text-on-surface-variant">
                     Meta/TikTok conversion API with multi-touch attribution
@@ -624,9 +642,6 @@ export default function Header() {
                   <div className="flex items-center justify-between">
                     <span className="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors">
                       Performance Marketing Stack
-                    </span>
-                    <span className="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-primary/10 text-primary">
-                      $10k–$45k
                     </span>
                   </div>
                   <p className="font-body-sm text-body-sm text-on-surface-variant">
@@ -650,8 +665,8 @@ export default function Header() {
                     Need a custom, bespoke hybrid sprint team?
                   </p>
                   <p className="font-body-sm text-body-sm text-on-surface-variant">
-                    Blend 1 Staff Architect with 2 Full-Stack Fellows
-                    starting at $22,500/two-week cadence.
+                    Blend 1 Staff Architect with 2 Full-Stack Fellows starting
+                    at $22,500/two-week cadence.
                   </p>
                 </div>
               </div>
@@ -689,7 +704,9 @@ export default function Header() {
                   className="p-space-md rounded bg-surface-container-low hover:bg-surface-container transition-all group flex gap-space-sm"
                 >
                   <div className="w-12 h-12 rounded bg-primary/10 text-primary flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
-                    <span className="material-symbols-outlined text-[26px]">{item.icon}</span>
+                    <span className="material-symbols-outlined text-[26px]">
+                      {item.icon}
+                    </span>
                   </div>
                   <div>
                     <div className="flex items-center justify-between">
@@ -721,9 +738,14 @@ export default function Header() {
           <div className="w-full max-w-[1440px] mx-auto px-margin py-space-lg">
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-space-lg">
               {megaMenuItems.techStack.map((category) => (
-                <div key={category.category} className="flex flex-col gap-space-sm">
+                <div
+                  key={category.category}
+                  className="flex flex-col gap-space-sm"
+                >
                   <div className="flex items-center gap-2 pb-space-xs text-primary font-headline-sm text-headline-sm">
-                    <span className="material-symbols-outlined">{category.icon}</span>
+                    <span className="material-symbols-outlined">
+                      {category.icon}
+                    </span>
                     <span>{category.category}</span>
                   </div>
                   <div className="flex flex-wrap gap-2">
@@ -732,7 +754,9 @@ export default function Header() {
                         key={tech}
                         className={`px-3 py-1.5 rounded bg-surface-container-low text-on-surface font-label-md text-body-md flex items-center gap-1.5`}
                       >
-                        <span className={`w-2 h-2 rounded-full ${category.color}`}></span>
+                        <span
+                          className={`w-2 h-2 rounded-full ${category.color}`}
+                        ></span>
                         {tech}
                       </span>
                     ))}
@@ -813,7 +837,8 @@ export default function Header() {
                       </span>
                     </div>
                     <span className="font-body-sm text-body-sm text-on-surface-variant">
-                      GCC Tax Tech &amp; FinTech Squads • Direct: +971 4 800 6398
+                      GCC Tax Tech &amp; FinTech Squads • Direct: +971 4 800
+                      6398
                     </span>
                   </div>
                   <div className="p-space-sm rounded bg-surface-container-low">
@@ -870,9 +895,7 @@ export default function Header() {
       <div
         aria-hidden="true"
         className={`fixed inset-0 z-50 transform transition-transform duration-300 ease-in-out flex justify-end ${
-          mobileDrawerOpen
-            ? "translate-x-0"
-            : "translate-x-full"
+          mobileDrawerOpen ? "translate-x-0" : "translate-x-full"
         }`}
         id="mobile-drawer"
       >
@@ -923,7 +946,7 @@ export default function Header() {
                 <div className="flex flex-col gap-2 pt-2 pl-2">
                   <a
                     className="text-body-md font-body-md text-on-surface-variant hover:text-primary flex justify-between py-1"
-                  href="/custom-software"
+                    href="/custom-software"
                   >
                     <span>Cloud Microservices</span>
                     <span className="text-primary font-label-sm">
@@ -932,7 +955,7 @@ export default function Header() {
                   </a>
                   <a
                     className="text-body-md font-body-md text-on-surface-variant hover:text-primary flex justify-between py-1"
-                    href="#mobile-native"
+                    href="/mobile-development"
                   >
                     <span>iOS &amp; Android Apps</span>
                     <span className="text-primary font-label-sm">

@@ -3,229 +3,223 @@
 import type { JSX } from "react";
 import { useState } from "react";
 
-const sources = [
-  {
-    id: "shopify",
-    label: "Shopify",
-    icon: "storefront",
-    price: 10,
-  },
-  {
-    id: "opencart",
-    label: "OpenCart",
-    icon: "open_in_browser",
-    price: 15,
-  },
-  {
-    id: "custom",
-    label: "Custom Platform",
-    icon: "code",
-    price: 20,
-  },
-  {
-    id: "legacy",
-    label: "Legacy System",
-    icon: "storage",
-    price: 10,
-  },
+const platforms = [
+  { id: "shopify", label: "Shopify Store", price: 24000, weeks: 5 },
+  { id: "opencart", label: "OpenCart / B2B", price: 28000, weeks: 6 },
+  { id: "portal", label: "Custom Web Portal", price: 38000, weeks: 7 },
+  { id: "hybrid", label: "Hybrid / Multi-App", price: 54000, weeks: 9 },
 ];
 
-const complexityOptions = [
-  { id: "basic", label: "Basic (1–2 pages)", price: 0 },
-  { id: "standard", label: "Standard (3–6 pages)", price: 500 },
-  { id: "complex", label: "Complex (7+ pages / user auth)", price: 1500 },
+const integrations = [
+  { id: "quickbooks", label: "QuickBooks Online / Desktop", cost: 6000, weeks: 1 },
+  { id: "netsuite", label: "NetSuite / Sage ERP", cost: 8000, weeks: 1 },
+  { id: "shipstation", label: "ShipStation & 3PL Warehouses", cost: 5000, weeks: 1 },
+  { id: "customquote", label: "Custom Quoting & Calculator", cost: 7000, weeks: 1 },
 ];
 
 export default function ScopeEstimator(): JSX.Element {
-  const [selectedSources, setSelectedSources] = useState<string[]>(["shopify"]);
-  const [complexity, setComplexity] = useState("standard");
-  const [addons, setAddons] = useState({
-    hosting: false,
-    maintenance: false,
-    seo: false,
-    migration: false,
-  });
+  const [selectedPlatform, setSelectedPlatform] = useState(platforms[0]);
+  const [selectedIntegrations, setSelectedIntegrations] = useState<string[]>([]);
+  const [complexity, setComplexity] = useState(0);
 
-  const selectedComplex = complexityOptions.find((c) => c.id === complexity);
+  const complexityLabels = [
+    "Standard (up to 5k SKUs)",
+    "Expanded (5k - 25k SKUs)",
+    "Enterprise Catalog (25k+ SKUs)",
+  ];
+  const complexityMultipliers = [1.0, 1.25, 1.5];
+  const complexityWeeksAdd = [0, 1, 2];
 
-  let basePrice = 12000;
-  let estDays = 21;
-
-  selectedSources.forEach((src) => {
-    const source = sources.find((s) => s.id === src);
-    if (source) {
-      basePrice += source.price * 500;
-      estDays += 2;
-    }
-  });
-
-  if (selectedComplex) {
-    basePrice += selectedComplex.price;
-    estDays += 3;
-  }
-
-  if (addons.hosting) {
-    basePrice += 500;
-  }
-  if (addons.maintenance) {
-    basePrice += 1500;
-  }
-  if (addons.seo) {
-    basePrice += 1000;
-  }
-  if (addons.migration) {
-    basePrice += 3000;
-  }
-
-  estDays += Math.floor(selectedSources.length / 2);
-
-  const toggleSource = (id: string) => {
-    if (selectedSources.includes(id)) {
-      setSelectedSources(selectedSources.filter((s) => s !== id));
+  const toggleIntegration = (id: string) => {
+    if (selectedIntegrations.includes(id)) {
+      setSelectedIntegrations(
+        selectedIntegrations.filter((i) => i !== id)
+      );
     } else {
-      setSelectedSources([...selectedSources, id]);
+      setSelectedIntegrations([...selectedIntegrations, id]);
     }
   };
 
-  const toggleAddon = (key: keyof typeof addons) => {
-    setAddons({ ...addons, [key]: !addons[key] });
-  };
+  const integrationAddons = integrations
+    .filter((i) => selectedIntegrations.includes(i.id))
+    .reduce((sum, i) => sum + i.cost, 0);
+
+  const integrationWeeks = integrations
+    .filter((i) => selectedIntegrations.includes(i.id))
+    .reduce((sum, i) => sum + i.weeks, 0);
+
+  const complexityMultiplier = complexityMultipliers[complexity];
+  const complexityWeeks = complexityWeeksAdd[complexity];
+
+  const rawTotal =
+    (selectedPlatform.price + integrationAddons) * complexityMultiplier;
+  const lowBound = Math.round(rawTotal / 1000) * 1000;
+  const highBound = Math.round((rawTotal * 1.2) / 1000) * 1000;
+  const totalWeeks = Math.min(
+    10,
+    Math.max(4, selectedPlatform.weeks + integrationWeeks + complexityWeeks)
+  );
 
   return (
-    <section
-      id="scoping-call"
-      className="w-full px-margin-mobile md:px-gutter lg:px-margin py-space-xl bg-surface-container-lowest"
-    >
-      <div className="max-w-[1440px] mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="font-display-lg text-display-lg text-on-surface mb-4">
-            Estimate Your Build Cost &amp; Timeline
-          </h2>
-          <p className="font-body-xl text-body-xl text-on-surface-variant">
-            Select your platforms and scope to get an instant quote.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-gutter">
-          <div className="space-y-6">
-            <div>
-              <label className="font-label-md text-label-md text-on-surface mb-2 block">
-                Platforms (Select all that apply)
-              </label>
-              <div className="grid grid-cols-2 gap-2">
-                {sources.map((source) => (
-                  <button
-                    key={source.id}
-                    type="button"
-                    onClick={() => toggleSource(source.id)}
-                    className={`p-3 rounded-xl border-2 font-label-sm text-label-sm font-semibold transition-all ${
-                      selectedSources.includes(source.id)
-                        ? "border-primary bg-primary/10 text-primary"
-                        : "border-surface-variant text-on-surface-variant hover:border-primary"
-                    }`}
-                  >
-                    <span className="material-symbols-outlined mr-2">
-                      {source.icon}
-                    </span>
-                    {source.label}
-                  </button>
-                ))}
+    <section className="w-full px-margin-mobile md:px-gutter lg:px-margin py-12 md:py-16">
+      <div className="max-w-[1280px] mx-auto">
+        <div className="rounded-3xl bg-surface-container-lowest p-8 md:p-12 shadow-xl">
+          <div className="max-w-3xl mb-8">
+            <span className="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">
+              Instant Scope Estimator
+            </span>
+            <h2 className="font-headline-xl text-headline-xl text-on-surface mt-1">
+              Configure Your Project Budget &amp; Timeline
+            </h2>
+            <p className="font-body-md text-body-md text-on-surface-variant mt-2">
+              Select your stack and integration requirements to calculate a
+              realistic fixed-price sprint preview.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-space-lg bg-surface-container-low rounded-2xl p-space-lg shadow-sm">
+            <div className="lg:col-span-7 flex flex-col gap-space-md">
+              <div>
+                <label className="font-label-lg text-label-lg text-on-surface block mb-3 font-semibold">
+                  1. Primary Architecture Needed
+                </label>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5" id="platformSelector">
+                  {platforms.map((plt) => (
+                    <button
+                      key={plt.id}
+                      type="button"
+                      onClick={() => setSelectedPlatform(plt)}
+                      className={`platform-btn p-3 rounded-xl font-label-sm text-label-sm font-semibold transition-all ${
+                        selectedPlatform.id === plt.id
+                          ? "bg-primary text-on-primary"
+                          : "bg-surface-container text-on-surface"
+                      }`}
+                    >
+                      {plt.label}
+                    </button>
+                  ))}
+                </div>
               </div>
-            </div>
-
-            <div>
-              <label className="font-label-md text-label-md text-on-surface mb-2 block">
-                Project Complexity
-              </label>
-              <div className="space-y-2">
-                {complexityOptions.map((opt) => (
-                  <button
-                    key={opt.id}
-                    type="button"
-                    onClick={() => setComplexity(opt.id)}
-                    className={`w-full p-3 rounded-xl border-2 text-left font-label-sm text-label-sm transition-all ${
-                      complexity === opt.id
-                        ? "border-primary bg-primary/10 text-primary"
-                        : "border-surface-variant text-on-surface-variant hover:border-primary"
-                    }`}
-                  >
-                    <span className="font-semibold">{opt.label}</span>
-                    <span className="float-right ${opt.price === 0 ? 'text-on-surface-variant' : 'text-primary'}">
-                      ${opt.price === 0 ? "—" : `+$${opt.price}`}
-                    </span>
-                  </button>
-                ))}
+              <div>
+                <label className="font-label-lg text-label-lg text-on-surface block mb-3 font-semibold">
+                  2. Operational Integrations Required
+                </label>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {integrations.map((int) => (
+                    <label
+                      key={int.id}
+                      className="p-3.5 rounded-xl bg-surface-container-low flex items-center gap-3 cursor-pointer hover:bg-surface-container transition-colors"
+                    >
+                      <input
+                        type="checkbox"
+                        className="w-4 h-4 rounded text-primary accent-primary"
+                        checked={selectedIntegrations.includes(int.id)}
+                        onChange={() => toggleIntegration(int.id)}
+                        data-cost={int.cost}
+                        data-weeks={int.weeks}
+                      />
+                      <div>
+                        <span className="font-headline-sm text-headline-sm text-on-surface block">
+                          {int.label}
+                        </span>
+                        <span className="font-body-sm text-body-sm text-on-surface-variant">
+                          +${int.cost.toLocaleString()} • 2-way sync
+                        </span>
+                      </div>
+                    </label>
+                  ))}
+                </div>
               </div>
-            </div>
-
-            <div>
-              <label className="font-label-md text-label-md text-on-surface mb-2 block">
-                Add-On Services
-              </label>
-              <div className="space-y-2">
-                {Object.entries(addons).map(([key, checked]) => (
-                  <label
-                    key={key}
-                    className="flex items-center justify-between p-3 rounded-xl bg-surface-container-low cursor-pointer"
-                  >
-                    <span className="font-label-sm text-label-sm text-on-surface capitalize">
-                      {key}
-                    </span>
-                    <input
-                      type="checkbox"
-                      checked={checked}
-                      onChange={() => toggleAddon(key as keyof typeof addons)}
-                      className="w-5 h-5 rounded accent-primary cursor-pointer"
-                    />
+              <div>
+                <div className="flex items-center justify-between mb-2">
+                  <label className="font-label-lg text-label-lg text-on-surface font-semibold">
+                    3. Catalog &amp; User Complexity Level
                   </label>
-                ))}
+                  <span className="font-label-sm text-label-sm text-primary font-bold" id="complexityLabel">
+                    {complexityLabels[complexity]}
+                  </span>
+                </div>
+                <input
+                  type="range"
+                  min="0"
+                  max="2"
+                  step="1"
+                  value={complexity}
+                  onChange={(e) => setComplexity(Number(e.target.value))}
+                  className="w-full accent-primary cursor-pointer"
+                />
+                <div className="flex justify-between font-body-sm text-body-sm text-on-surface-variant mt-1">
+                  <span>Standard</span>
+                  <span>Expanded (5k - 25k SKUs)</span>
+                  <span>Enterprise Catalog (25k+ SKUs)</span>
+                </div>
+              </div>
+            </div>
+            <div className="lg:col-span-5 p-6 rounded-2xl bg-surface-container-lowest flex flex-col justify-between">
+              <div className="space-y-4">
+                <span className="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">
+                  Estimated Project Scope
+                </span>
+                <div>
+                  <span className="font-body-sm text-body-sm text-on-surface-variant block">
+                    Guaranteed Fixed Cost Range
+                  </span>
+                  <div
+                    className="font-display-hero text-headline-xl text-on-surface font-extrabold"
+                    id="calcPrice"
+                  >
+                    ${lowBound.toLocaleString()} – ${highBound.toLocaleString()}
+                  </div>
+                </div>
+                <div className="p-3.5 rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <span className="material-symbols-outlined text-primary">
+                      calendar_month
+                    </span>
+                    <span className="font-headline-sm text-headline-sm text-on-surface">
+                      Target Delivery Timeline:
+                    </span>
+                  </div>
+                  <span
+                    className="font-label-lg text-label-lg text-primary font-bold"
+                    id="calcTimeline"
+                  >
+                    {totalWeeks} Weeks
+                  </span>
+                </div>
+                <div className="space-y-2 pt-2 text-on-surface-variant font-body-sm text-body-sm">
+                  <div className="flex items-center gap-2">
+                    <span className="material-symbols-outlined text-primary text-[16px]">
+                      verified
+                    </span>
+                    <span>100% In-house senior software engineers</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="material-symbols-outlined text-primary text-[16px]">
+                      verified
+                    </span>
+                    <span>Full code IP ownership & clean repository</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="material-symbols-outlined text-primary text-[16px]">
+                      verified
+                    </span>
+                    <span>Post-launch warranty included contractually</span>
+                  </div>
+                </div>
+              </div>
+              <div className="pt-6">
+                <a
+                  className="w-full py-3.5 px-4 rounded-full bg-primary hover:bg-primary-container text-on-primary text-center font-label-lg text-label-lg block transition-all shadow-[0_4px_14px_rgba(0,105,72,0.3)]"
+                  href="#scoping-call"
+                >
+                  Lock In This Scope Estimate
+                </a>
+                <span className="block text-center font-body-sm text-body-sm text-on-surface-variant mt-2">
+                  Detailed architecture proposal delivered in 48 hours.
+                </span>
               </div>
             </div>
           </div>
-
-          <div className="bg-surface-container-lowest rounded-2xl p-6 shadow-lg h-fit">
-            <h3 className="font-display-md text-display-md text-on-surface mb-4">
-              Your Estimate
-            </h3>
-            <div className="space-y-4">
-              <div>
-                <span className="font-label-sm text-label-sm text-on-surface-variant">
-                  Estimated Price
-                </span>
-                <div className="font-display-hero text-display-hero text-primary">
-                  ${basePrice.toLocaleString()}
-                </div>
-              </div>
-              <div>
-                <span className="font-label-sm text-label-sm text-on-surface-variant">
-                  Delivery Timeline
-                </span>
-                <div className="font-display-sm text-display-sm text-on-surface">
-                  {estDays} days ({Math.ceil(estDays / 7)} weeks)
-                </div>
-              </div>
-              <div className="pt-4">
-                <span className="font-label-xs text-label-xs text-on-surface-variant">
-                  Platforms: {selectedSources.length} selected
-                </span>
-                <br />
-                <span className="font-label-xs text-label-xs text-on-surface-variant">
-                  Complexity:{" "}
-                  {complexityOptions.find((c) => c.id === complexity)?.label ||
-                    "Standard"}
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-8 text-center">
-          <a
-            href="/contact"
-            className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg transition-all shadow-[0_4px_14px_rgba(0,105,72,0.3)]"
-          >
-            Book Your Scoping Call — Let&apos;s Build This
-          </a>
         </div>
       </div>
     </section>

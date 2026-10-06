@@ -3,10 +3,11 @@ import type { JSX } from "react";
 export default function BreadcrumbRibbon(): JSX.Element {
   return (
     <section className="w-full px-margin-mobile md:px-gutter lg:px-margin pt-6 pb-4">
-      <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div className="max-w-[1280px] mx-auto flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div className="flex items-center gap-2 font-body-sm text-body-sm text-on-surface-variant">
           <a
             className="hover:text-primary transition-colors flex items-center gap-1"
+            data-path="capabilities"
             href="#capabilities"
           >
             <span className="material-symbols-outlined text-[16px]">

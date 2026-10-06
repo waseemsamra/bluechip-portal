@@ -2,68 +2,52 @@ import type { JSX } from "react";
 
 const faqs = [
   {
-    question: "What&apos;s included in a fixed-price package?",
-    answer:
-      "Everything: design, development, content migration, testing, deployment, and handoff. We include a dedicated project manager, senior developers, and unlimited revisions within scope.",
+    q: "How do you guarantee a 100% fixed fee with no surprise charges?",
+    a: "Before writing a single line of code, our Senior Solutions Architects conduct a strict 48-hour scoping session. We define the exact user stories, API contracts, data models, and acceptance criteria upfront. If a deliverable is in the specification, you will never be charged extra for it—even if it takes us longer than anticipated.",
   },
   {
-    question: "Do I really own the code?",
-    answer:
-      "Yes, 100%. We transfer full ownership of the source code, domain, and all assets. You get a clean Git repo and documentation.",
+    q: "Should my business build on Shopify, OpenCart, or a Custom React portal?",
+    a: "If you are a direct-to-consumer brand with standard SKU structures, Shopify Plus offers unmatched speed and out-of-the-box payment integrations. If you are a wholesale or industrial distributor needing zero platform commission, massive catalogs, and on-premise ERP integration, OpenCart provides complete control. For custom quoting calculators, multi-role client dashboards, and proprietary workflow applications, a bespoke Next.js/React portal is ideal. We advise on this objectively during our initial scoping call.",
   },
   {
-    question: "What platforms do you work with?",
-    answer:
-      "Shopify Plus, OpenCart, and fully custom headless React/Vue applications. We also do legacy system modernization.",
+    q: "Do we own 100% of the code and intellectual property?",
+    a: "Yes. Upon completion of each project sprint and milestone settlement, 100% of the IP, Git repositories, custom design files, and documentation belong completely to your company. There are no recurring agency lock-ins or proprietary license fees.",
   },
   {
-    question: "How long does a typical build take?",
-    answer:
-      "Starter packages ship in 4–6 weeks. Growth portals in 8–10 weeks. Enterprise suites in 10–14 weeks. We include contractual SLAs.",
-  },
-  {
-    question: "What if my requirements change mid-project?",
-    answer:
-      "Scope changes outside the original agreement are handled via a transparent change request process with no pressure upsells.",
+    q: "What happens after launch? Do you offer post-launch warranties?",
+    a: "Every build we ship includes a complimentary 30 to 90-day comprehensive bug-fix warranty. If any unexpected defect or integration hiccup emerges during that window, our team resolves it at zero additional cost. Following warranty completion, we offer flexible, low-overhead maintenance retainers or complete developer hand-offs to your team.",
   },
 ];
 
 export default function FaqSection(): JSX.Element {
   return (
-    <section
-      id="faq"
-      className="w-full px-margin-mobile md:px-gutter lg:px-margin py-space-xl"
-    >
-      <div className="max-w-[1440px] mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="font-display-lg text-display-lg text-on-surface mb-4">
+    <section className="w-full px-margin-mobile md:px-gutter lg:px-margin py-12 md:py-16">
+      <div className="max-w-[1280px] mx-auto flex flex-col gap-10">
+        <div className="text-center max-w-3xl mx-auto">
+          <span className="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">
+            Clear Answers
+          </span>
+          <h2 className="font-headline-xl text-headline-xl text-on-surface mt-1">
             Frequently Asked Questions
           </h2>
-          <p className="font-body-xl text-body-xl text-on-surface-variant">
-            Everything you need to know about working with us.
+          <p className="font-body-md text-body-md text-on-surface-variant mt-2">
+            Everything you need to know about our fixed pricing, delivery
+            SLAs, and code transfer protocols.
           </p>
         </div>
-
-        <div className="max-w-3xl mx-auto space-y-4">
+        <div className="max-w-3xl mx-auto w-full space-y-4">
           {faqs.map((faq, idx) => (
-            <details
+            <div
               key={idx}
-              className="bg-surface-container-lowest rounded-xl p-4 shadow-sm group/open"
+              className="p-6 rounded-2xl bg-surface-container-lowest shadow-sm"
             >
-              <summary className="flex items-center justify-between cursor-pointer list-none">
-                <span className="font-display-sm text-display-sm text-on-surface">
-                  {faq.question}
-                </span>
-                <span
-                  className={`material-symbols-outlined text-[24px] text-primary transition-transform duration-300 group-open/open:rotate-180`}
-                >
-                  expand_more
-                </span>
-              </summary>
-              <p className="mt-3 font-body-md text-body-md text-on-surface-variant">
-                {faq.answer}
+              <h3 className="font-headline-sm text-headline-sm text-on-surface mb-2 font-bold">
+                {faq.q}
+              </h3>
+              <p className="font-body-md text-body-md text-on-surface-variant">
+                {faq.a}
               </p>
-            </details>
+            </div>
           ))}
         </div>
       </div>

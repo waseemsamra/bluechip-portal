@@ -1,7 +1,7 @@
 import type { JSX } from "react";
 
 import BreadcrumbRibbon from "@/components/custom/BreadcrumbRibbon";
-import CustomHero from "@/components/custom/HeroSection";
+import HeroSection from "@/components/custom/HeroSection";
 import CapabilitiesSection from "@/components/custom/CapabilitiesSection";
 import PlatformsMatrix from "@/components/custom/PlatformsMatrix";
 import DataStruggles from "@/components/custom/DataStruggles";
@@ -10,8 +10,6 @@ import PricingPackages from "@/components/custom/PricingPackages";
 import ScopeEstimator from "@/components/custom/ScopeEstimator";
 import ConsultationForm from "@/components/custom/ConsultationForm";
 import FaqSection from "@/components/custom/FaqSection";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "Custom Software & E-Commerce Development | BlueChip Tech",
@@ -21,11 +19,10 @@ export const metadata = {
 
 export default function CustomSoftwarePage(): JSX.Element {
   return (
-    <>
-      <Header />
-      <main>
+    <main className="w-full pt-20 bg-surface min-h-[calc(100vh-80px)]">
+      <div className="flex flex-col w-full">
         <BreadcrumbRibbon />
-        <CustomHero />
+        <HeroSection />
         <CapabilitiesSection />
         <PlatformsMatrix />
         <DataStruggles />
@@ -34,8 +31,7 @@ export default function CustomSoftwarePage(): JSX.Element {
         <ScopeEstimator />
         <ConsultationForm />
         <FaqSection />
-      </main>
-      <Footer />
-    </>
+      </div>
+    </main>
   );
 }
