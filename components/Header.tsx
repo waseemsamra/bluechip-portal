@@ -293,12 +293,12 @@ export default function Header() {
               >
                 Client Portal
               </a>
-              <a
+              <Link
                 className="text-on-surface-variant hover:text-on-surface transition-colors"
-                href="#"
+                href="/contact-us"
               >
-                System Status
-              </a>
+                Contact Us
+              </Link>
             </div>
           </div>
         </div>

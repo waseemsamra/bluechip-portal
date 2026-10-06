@@ -36,6 +36,7 @@ const footerLinks = [
   {
     label: "Company",
     links: [
+      { label: "About Us", href: "/about-us" },
       { label: "Production Case Studies", href: "#" },
       { label: "Our Engineering Fellows", href: "#" },
       { label: "Engineering Dispatch", href: "#" },

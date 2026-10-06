@@ -69,61 +69,63 @@ export default function PillarsGrid(): JSX.Element {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-space-lg lg:gap-8">
-          {pillars.map((pillar) => (
-            <div
-              key={pillar.tag}
-              className="bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant/70 shadow-sm flex flex-col justify-between hover:border-primary/40 transition-all"
-            >
-              <div className="flex flex-col gap-4">
-                <div className="flex items-center justify-between">
-                  <span className="px-3 py-1 rounded-full text-xs font-bold bg-primary-fixed/40 text-on-primary-fixed">
-                    {pillar.tag}
-                  </span>
-                  <span className="text-xs text-outline font-semibold">
-                    3 Core Services
-                  </span>
-                </div>
+        <div className="w-full overflow-x-auto lg:overflow-visible">
+          <div className="flex flex-col sm:flex-row sm:gap-space-lg lg:grid lg:grid-cols-2 lg:gap-space-lg lg:gap-8 pb-2 sm:min-w-[560px]">
+            {pillars.map((pillar) => (
+              <div
+                key={pillar.tag}
+                className="flex-none w-full sm:flex-none sm:w-[260px] lg:w-auto bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant/70 shadow-sm flex flex-col justify-between hover:border-primary/40 transition-all"
+              >
+                <div className="flex flex-col gap-4">
+                  <div className="flex items-center justify-between">
+                    <span className="px-3 py-1 rounded-full text-xs font-bold bg-primary-fixed/40 text-on-primary-fixed">
+                      {pillar.tag}
+                    </span>
+                    <span className="text-xs text-outline font-semibold">
+                      3 Core Services
+                    </span>
+                  </div>
 
-                <h3 className="font-headline-lg text-2xl font-bold text-on-surface">
-                  {pillar.title}
-                </h3>
+                  <h3 className="font-headline-lg text-2xl font-bold text-on-surface">
+                    {pillar.title}
+                  </h3>
 
-                <p className="font-body-sm text-sm text-on-surface-variant leading-relaxed">
-                  {pillar.desc}
-                </p>
+                  <p className="font-body-sm text-sm text-on-surface-variant leading-relaxed">
+                    {pillar.desc}
+                  </p>
 
-                <div className="space-y-3 pt-2">
-                  {pillar.services.map((svc) => (
-                    <div
-                      key={svc.label}
-                      className="p-3 bg-surface-container-low rounded-xl"
-                    >
-                      <div className="flex items-center justify-between text-xs font-bold text-on-surface mb-1">
-                        <span>{svc.label}</span>
-                        <span className="text-primary">{svc.price}</span>
+                  <div className="space-y-3 pt-2">
+                    {pillar.services.map((svc) => (
+                      <div
+                        key={svc.label}
+                        className="p-3 bg-surface-container-low rounded-xl"
+                      >
+                        <div className="flex items-center justify-between text-xs font-bold text-on-surface mb-1">
+                          <span>{svc.label}</span>
+                          <span className="text-primary">{svc.price}</span>
+                        </div>
+                        <p className="text-[12px] text-on-surface-variant">
+                          {svc.note}
+                        </p>
                       </div>
-                      <p className="text-[12px] text-on-surface-variant">
-                        {svc.note}
-                      </p>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
+                </div>
+
+                <div className="pt-6 mt-6 border-t border-outline-variant/40 flex items-center justify-between">
+                  <span className="text-xs font-bold text-on-surface-variant">
+                    {pillar.tech}
+                  </span>
+                  <a
+                    className="text-xs font-bold text-primary hover:underline"
+                    href="#consultation"
+                  >
+                    Discuss Requirements →
+                  </a>
                 </div>
               </div>
-
-              <div className="pt-6 mt-6 border-t border-outline-variant/40 flex items-center justify-between">
-                <span className="text-xs font-bold text-on-surface-variant">
-                  {pillar.tech}
-                </span>
-                <a
-                  className="text-xs font-bold text-primary hover:underline"
-                  href="#consultation"
-                >
-                  Discuss Requirements →
-                </a>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

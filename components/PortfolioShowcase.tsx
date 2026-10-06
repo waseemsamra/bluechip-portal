@@ -91,48 +91,50 @@ export default function PortfolioShowcase(): JSX.Element {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md lg:gap-6">
-          {cases.map((c) => (
-            <div
-              key={c.title}
-              className="bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant/60 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow"
-            >
-              <div className="flex flex-col gap-3">
-                <div className="flex items-center justify-between">
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full">
-                    {c.category}
-                  </span>
-                  <span className="text-xs font-bold text-on-surface">
-                    {c.tech}
-                  </span>
+        <div className="w-full overflow-x-auto lg:overflow-visible">
+          <div className="flex flex-col sm:flex-row sm:gap-space-md lg:grid lg:grid-cols-3 lg:gap-space-md lg:gap-6 pb-2 sm:min-w-[840px]">
+            {cases.map((c) => (
+              <div
+                key={c.title}
+                className="flex-none w-full sm:flex-none sm:w-[300px] lg:w-auto bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant/60 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow"
+              >
+                <div className="flex flex-col gap-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full">
+                      {c.category}
+                    </span>
+                    <span className="text-xs font-bold text-on-surface">
+                      {c.tech}
+                    </span>
+                  </div>
+                  <h3 className="font-headline-sm text-lg font-bold text-on-surface">
+                    {c.title}
+                  </h3>
+                  <p className="font-body-sm text-xs text-on-surface-variant leading-relaxed">
+                    {c.desc}
+                  </p>
                 </div>
-                <h3 className="font-headline-sm text-lg font-bold text-on-surface">
-                  {c.title}
-                </h3>
-                <p className="font-body-sm text-xs text-on-surface-variant leading-relaxed">
-                  {c.desc}
-                </p>
+                <div className="mt-6 pt-4 border-t border-outline-variant/40 flex items-center justify-between">
+                  <div>
+                    <span className="text-xl font-headline-md font-extrabold text-primary">
+                      {c.metric}
+                    </span>
+                    <span className="text-[11px] text-outline block">
+                      {c.metricLabel}
+                    </span>
+                  </div>
+                  <div>
+                    <span className="text-xl font-headline-md font-extrabold text-on-surface">
+                      {c.secondMetric}
+                    </span>
+                    <span className="text-[11px] text-outline block">
+                      {c.secondMetricLabel}
+                    </span>
+                  </div>
+                </div>
               </div>
-              <div className="mt-6 pt-4 border-t border-outline-variant/40 flex items-center justify-between">
-                <div>
-                  <span className="text-xl font-headline-md font-extrabold text-primary">
-                    {c.metric}
-                  </span>
-                  <span className="text-[11px] text-outline block">
-                    {c.metricLabel}
-                  </span>
-                </div>
-                <div>
-                  <span className="text-xl font-headline-md font-extrabold text-on-surface">
-                    {c.secondMetric}
-                  </span>
-                  <span className="text-[11px] text-outline block">
-                    {c.secondMetricLabel}
-                  </span>
-                </div>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
