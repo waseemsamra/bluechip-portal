@@ -31,6 +31,7 @@ const footerLinks = [
       { label: "Kubernetes Platforms", href: "#" },
       { label: "Event-Driven Microservices", href: "#" },
       { label: "Zero-Trust SecOps", href: "#" },
+      { label: "Payment Gateway Integration", href: "/payment-gateway-integration" },
     ],
   },
   {
