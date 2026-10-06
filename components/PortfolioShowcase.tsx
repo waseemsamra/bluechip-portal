@@ -85,18 +85,21 @@ export default function PortfolioShowcase(): JSX.Element {
             </p>
           </div>
           <div className="flex items-center gap-2">
-            <span className="px-3.5 py-1.5 rounded-full text-xs font-bold bg-primary text-on-primary">
-              100% Production SLA Met
-            </span>
+            <a
+              className="px-3.5 py-1.5 rounded-full text-xs font-bold bg-primary text-on-primary hover:bg-primary-container transition-colors"
+              href="/portfolio"
+            >
+              View All
+            </a>
           </div>
         </div>
 
-        <div className="w-full overflow-x-auto lg:overflow-visible">
-          <div className="flex flex-col sm:flex-row sm:gap-space-md lg:grid lg:grid-cols-3 lg:gap-space-md lg:gap-6 pb-2 sm:min-w-[840px]">
+        <div className="w-full overflow-x-auto">
+          <div className="flex gap-space-md lg:gap-6 pb-2 min-w-max">
             {cases.map((c) => (
               <div
                 key={c.title}
-                className="flex-none w-full sm:flex-none sm:w-[300px] lg:w-auto bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant/60 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow"
+                className="flex-none w-[340px] md:w-[380px] bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant/60 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow"
               >
                 <div className="flex flex-col gap-3">
                   <div className="flex items-center justify-between">

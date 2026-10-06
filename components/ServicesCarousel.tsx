@@ -39,6 +39,7 @@ const services = [
     desc: "Custom Hydrogen storefronts, custom checkout extensibility, enterprise ERP integrations, and high-converting OpenCart/Shopify Plus rebuilds.",
     tags: ["Shopify Plus", "Hydrogen", "Sanity CMS", "OpenCart"],
     accent: "text-orange-500",
+    link: "/shopify-plus",
   },
   {
     num: "04",
@@ -74,6 +75,7 @@ const services = [
     desc: "Dedicated NVMe high-availability servers, managed Kubernetes clusters, automated zero-day patching, and 99.99% uptime guarantees.",
     tags: ["NVMe", "Kubernetes", "99.99% SLA", "DDoS Shield"],
     accent: "text-indigo-500",
+    link: "/bare-metal-ha",
   },
   {
     num: "07",
@@ -85,6 +87,7 @@ const services = [
     desc: "Turnkey business onboarding: Google Workspace / Microsoft 365, strict DMARC/SPF/DKIM deliverability setup, and fast cPanel/Nginx web hosting.",
     tags: ["Workspace", "M365", "DMARC", "SSL Zero-Spam"],
     accent: "text-rose-500",
+    link: "/web-hosting-email",
   },
   {
     num: "08",
@@ -96,6 +99,7 @@ const services = [
     desc: "Server-side Conversions API (Meta CAPI, TikTok Events API), full-funnel attribution tracking, and targeted demand-generation ad funnels.",
     tags: ["Meta CAPI", "TikTok API", "Server GTM", "Attribution"],
     accent: "text-pink-500",
+    link: "/paid-social",
   },
   {
     num: "09",
@@ -119,6 +123,7 @@ const services = [
     desc: "Commercial structured cabling, server rack assembly, hardware diagnostics, firewall appliance installations, and on-premises physical recovery.",
     tags: ["Cat6A Fiber", "Server Racks", "Fortinet", "Cisco Meraki"],
     accent: "text-amber-500",
+    link: "/network-hardware",
   },
 ];
 

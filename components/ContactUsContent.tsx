@@ -78,6 +78,8 @@ export default function ContactUsContent(): JSX.Element {
   const [activeDiscipline, setActiveDiscipline] = useState(0);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [showModal, setShowModal] = useState(false);
+  const [budgetRange, setBudgetRange] = useState("25-50k");
+  const [timeline, setTimeline] = useState("immediate");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -277,11 +279,13 @@ export default function ContactUsContent(): JSX.Element {
                   <select
                     className="w-full px-4 py-3 rounded-full bg-surface-container-lowest text-on-surface font-body-md focus:outline-none focus:ring-2 focus:ring-primary shadow-sm cursor-pointer"
                     id="budget-range"
+                    value={budgetRange}
+                    onChange={(e) => setBudgetRange(e.target.value)}
                   >
                     <option value="10-25k">
                       $10,000 – $25,000 (Sprint POC / Prototype)
                     </option>
-                    <option selected value="25-50k">
+                    <option value="25-50k">
                       $25,000 – $50,000 (Production System MVP)
                     </option>
                     <option value="50-80k">
@@ -302,8 +306,10 @@ export default function ContactUsContent(): JSX.Element {
                   <select
                     className="w-full px-4 py-3 rounded-full bg-surface-container-lowest text-on-surface font-body-md focus:outline-none focus:ring-2 focus:ring-primary shadow-sm cursor-pointer"
                     id="timeline"
+                    value={timeline}
+                    onChange={(e) => setTimeline(e.target.value)}
                   >
-                    <option selected value="immediate">
+                    <option value="immediate">
                       Immediate / 2–4 Weeks
                     </option>
                     <option value="1-2months">
@@ -340,7 +346,7 @@ export default function ContactUsContent(): JSX.Element {
               {/* Security Checkbox */}
               <div className="p-4 rounded-DEFAULT bg-surface-container-low flex items-start gap-3">
                 <input
-                  checked
+                  defaultChecked
                   className="mt-1 w-4 h-4 rounded text-primary focus:ring-primary focus:ring-offset-0 cursor-pointer"
                   id="mutual-nda"
                   type="checkbox"
