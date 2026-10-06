@@ -1,0 +1,13 @@
+<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Amazon Web Services">
+  <rect width="48" height="48" rx="8" fill="#fff" />
+  <defs>
+    <linearRadialGradient id="awsGrad" cx="24" cy="22" r="7">
+      <stop offset="0" stop-color="#ff9900" />
+      <stop offset="1" stop-color="#e67300" />
+    </linearRadialGradient>
+  </defs>
+  <circle cx="18" cy="23" r="6" fill="url(#awsGrad)" />
+  <circle cx="30" cy="23" r="6" fill="url(#awsGrad)" />
+  <circle cx="24" cy="18" r="6.8" fill="url(#awsGrad)" />
+  <text x="24" y="40" fill="#1488ff" font-family="Hanken Grotesk, Arial, sans-serif" font-size="14" font-weight="800" text-anchor="middle">AWS</text>
+</svg>

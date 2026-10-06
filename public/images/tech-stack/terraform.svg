@@ -1,0 +1,11 @@
+<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Terraform">
+  <rect width="48" height="48" rx="8" fill="#fff" />
+  <defs>
+    <linearRadialGradient id="tfGrad" cx="24" cy="24" r="11">
+      <stop offset="0" stop-color="#623ceb" />
+      <stop offset="1" stop-color="#432890" />
+    </linearRadialGradient>
+  </defs>
+  <polygon points="24,8 38,17 30,33 18,33 10,17" fill="url(#tfGrad)" />
+  <text x="24" y="32.5" fill="#fff" font-family="Hanken Grotesk, Arial, sans-serif" font-size="18" font-weight="800" text-anchor="middle">T</text>
+</svg>

@@ -1,0 +1,13 @@
+<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Node.js and NestJS">
+  <rect width="48" height="48" rx="8" fill="#fff" />
+  <defs>
+    <linearRadialGradient id="nodeGrad" cx="24" cy="24" r="13">
+      <stop offset="0" stop-color="#68a063" />
+      <stop offset="1" stop-color="#3c873a" />
+    </linearRadialGradient>
+  </defs>
+  <rect width="48" height="48" rx="8" fill="url(#nodeGrad)" />
+  <path d="M24 11c-7 0-12 5.5-12 12.5S17 38 24 38s12-5.5 12-12.5S31 11 24 11z" fill="none" stroke="#fff" stroke-width="2.5" />
+  <path d="M24 16c-5 0-9 3.8-9 8.5S19 33 24 33s9-3.8 9-8.5-4-8.5-9-8.5z" fill="none" stroke="#44873a" stroke-width="1.8" />
+  <circle cx="24" cy="24" r="3" fill="#fff" />
+</svg>

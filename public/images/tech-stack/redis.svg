@@ -1,0 +1,7 @@
+<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Redis">
+  <rect width="48" height="48" rx="8" fill="#fff" />
+  <rect x="7" y="10.5" width="34" height="5" rx="2.5" fill="#d32729" />
+  <circle cx="24" cy="30" r="10.2" fill="#d32729" />
+  <text x="24" y="34.5" fill="#fff" font-family="Hanken Grotesk, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Redis</text>
+  <circle cx="24" cy="30" r="5.2" fill="#fff" opacity=".18" />
+</svg>

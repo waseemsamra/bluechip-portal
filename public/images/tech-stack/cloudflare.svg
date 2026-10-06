@@ -1,0 +1,21 @@
+<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cloudflare">
+  <rect width="48" height="48" rx="8" fill="#fff" />
+  <defs>
+    <linearRadialGradient id="cfGrad" cx="24" cy="22" r="9">
+      <stop offset="0" stop-color="#ff8c3a" />
+      <stop offset="1" stop-color="#e06b0b" />
+    </linearRadialGradient>
+  </defs>
+  <circle cx="18" cy="24" r="7.2" fill="url(#cfGrad)" />
+  <circle cx="30" cy="24" r="7.2" fill="url(#cfGrad)" />
+  <circle cx="24" cy="20" r="8" fill="url(#cfGrad)" />
+  <circle cx="19" cy="22" r="1.8" fill="#fff" opacity=".8" />
+  <circle cx="29" cy="22" r="1.8" fill="#fff" opacity=".8" />
+  <circle cx="24" cy="18" r="1.8" fill="#fff" opacity=".8" />
+  <circle cx="17" cy="26" r="1.8" fill="#fff" opacity=".8" />
+  <circle cx="31" cy="26" r="1.8" fill="#fff" opacity=".8" />
+  <circle cx="24" cy="26" r="1.8" fill="#fff" opacity=".8" />
+  <circle cx="21" cy="29" r="1.8" fill="#fff" opacity=".8" />
+  <circle cx="27" cy="29" r="1.8" fill="#fff" opacity=".8" />
+  <text x="24" y="40" fill="#1488ff" font-family="Hanken Grotesk, Arial, sans-serif" font-size="14" font-weight="800" text-anchor="middle">CF</text>
+</svg>

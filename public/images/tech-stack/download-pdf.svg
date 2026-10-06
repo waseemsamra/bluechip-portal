@@ -1,0 +1,9 @@
+<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Download PDF Standards">
+  <rect width="48" height="48" rx="8" fill="#fff" />
+  <path d="M13 11h22v19h-2V13H15v15H13z" fill="#e5e7eb" />
+  <path d="M15 9h18a2 2 0 0 1 2 2v20a2 2 0 0 1-2 2H15a2 2 0 0 1-2-2V11a2 2 0 0 1 2-2z" fill="#f1f5f9" />
+  <path d="M26 16h2v8h-2zm-6 0h2v8h-2z" fill="#94a3b8" />
+  <path d="M24 12.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7z" fill="#cbd5e1" />
+  <path d="M20.5 16.5l3-3 3 3" stroke="#475569" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  <text x="24" y="45" fill="#64748b" font-family="Hanken Grotesk, Arial, sans-serif" font-size="8" font-weight="600" text-anchor="middle">PDF</text>
+</svg>

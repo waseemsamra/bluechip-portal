@@ -1,0 +1,6 @@
+<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MongoDB">
+  <rect width="48" height="48" rx="8" fill="#fff" />
+  <path d="M24 7c-5.2 3.8-8 10.2-8 17s2.8 13.2 8 17 8-6.8 8-17-2.8-13.2-8-17z" fill="#47a248" />
+  <path d="M24 14c-4.6 2.8-7.4 8.2-7.4 14.2S19.4 38.2 24 41s9.4-5.2 9.4-11.2-2.8-13.4-7-15.4" fill="#138737" />
+  <text x="24" y="32.5" fill="#fff" font-family="Hanken Grotesk, Arial, sans-serif" font-size="13" font-weight="800" text-anchor="middle">MongoDB</text>
+</svg>

@@ -1,0 +1,8 @@
+<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="PostgreSQL">
+  <rect width="48" height="48" rx="8" fill="#0b1c30" />
+  <ellipse cx="24" cy="13" rx="9.5" ry="2.6" fill="#336791" />
+  <path d="M14.5 13.4v14.2a9.5 9.5 0 0 0 18 0V13.4" fill="#336791" />
+  <ellipse cx="24" cy="29.4" rx="9.5" ry="2.6" fill="#336791" opacity=".82" />
+  <path d="M15 17v12.4a8.8 8.8 0 0 0 17-.2V17c-1.8-.3-3.6-.5-5.5-.5s-3.7.2-5.5.5z" fill="#336791" opacity=".56" />
+  <text x="24" y="29.6" fill="#fff" font-family="Hanken Grotesk, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle">PG</text>
+</svg>

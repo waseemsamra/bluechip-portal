@@ -9,7 +9,7 @@ const footerLinks = [
       { label: "Industries We Serve", href: "#" },
       { label: "Production Case Studies (40+)", href: "#" },
       { label: "Our Engineering Fellows", href: "#" },
-      { label: "Tech Stack Directory", href: "#" },
+      { label: "Tech Stack Directory", href: "/tech-stack" },
       { label: "Interactive Budget Estimator", href: "#" },
       { label: "Client Sprint Portal", href: "#" },
       { label: "Real-Time System Status", href: "#" },

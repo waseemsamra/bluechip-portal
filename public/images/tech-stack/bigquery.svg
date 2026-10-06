@@ -1,0 +1,11 @@
+<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Google BigQuery">
+  <rect width="48" height="48" rx="8" fill="#fff" />
+  <defs>
+    <linearRadialGradient id="bqGrad" cx="24" cy="24" r="11">
+      <stop offset="0" stop-color="#4285f4" />
+      <stop offset="1" stop-color="#1967d2" />
+    </linearRadialGradient>
+  </defs>
+  <polygon points="24,8 38,18 38,30 24,40 10,30 10,18" fill="url(#bqGrad)" />
+  <text x="24" y="30.5" fill="#fff" font-family="Hanken Grotesk, Arial, sans-serif" font-size="14" font-weight="800" text-anchor="middle">BQ</text>
+</svg>
